@@ -1,18 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ButtonLoadMore, ButtonWrapper } from './Button.styled';
 
-export class Button extends Component {
-  clickLoadMore = () => {
-    this.props.onClick();
+export const Button = ({ onClick }) => {
+  const clickLoadMore = () => {
+    onClick();
   };
+  return (
+    <ButtonWrapper>
+      <ButtonLoadMore type="submit" onClick={clickLoadMore}>
+        Load more
+      </ButtonLoadMore>
+    </ButtonWrapper>
+  );
+};
 
-  render() {
-    return (
-      <ButtonWrapper>
-        <ButtonLoadMore type="submit" onClick={this.clickLoadMore}>
-          Load more
-        </ButtonLoadMore>
-      </ButtonWrapper>
-    );
-  }
-}
+// export class Button extends Component {
+//   clickLoadMore = () => {
+//     this.props.onClick();
+//   };
+
+//   render() {
+//     return (
+//       <ButtonWrapper>
+//         <ButtonLoadMore type="submit" onClick={this.clickLoadMore}>
+//           Load more
+//         </ButtonLoadMore>
+//       </ButtonWrapper>
+//     );
+//   }
+// }
